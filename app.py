@@ -141,27 +141,7 @@ if st.button("🚀 开始风险评估", type="primary", use_container_width=True
 
         st.progress(min(final_prob, 1.0))
 
-    with col2:
-        st.info("📋 **输入的原始检验指标**")
-        display_df = pd.DataFrame({
-            "检验项目": [
-                "WBC (白细胞计数)", "NEU (中性粒细胞)", "LYM (淋巴细胞)",
-                "MON (单核细胞)", "MPV (平均血小板体积)", "CRP (C反应蛋白)",
-                "ESR (红细胞沉降率)", "ALB (白蛋白)", "HDL-C (高密度脂蛋白胆固醇)"
-            ],
-            "数值": [
-                f"{wbc:.2f}", f"{ne:.2f}", f"{lym:.2f}",
-                f"{mon:.2f}", f"{mpv:.2f}", f"{crp:.2f}",
-                f"{esr:.2f}", f"{alb:.2f}", f"{hdl_c:.2f}"
-            ],
-            "单位": [
-                "10⁹/L", "10⁹/L", "10⁹/L",
-                "10⁹/L", "fL", "mg/L",
-                "mm/h", "g/L", "mmol/L"
-            ]
-        })
-        st.table(display_df)
-
+    
     # ==========================================
     # 8. SHAP 可解释性分析
     # ==========================================
@@ -194,12 +174,12 @@ if st.button("🚀 开始风险评估", type="primary", use_container_width=True
 
             # 特征中文显示名映射
             feature_display = {
-                "dNLR": "dNLR 指数",
-                "CALLY": "CALLY 指数",
-                "ESR": "ESR (红细胞沉降率)",
-                "MPV": "MPV (平均血小板体积)",
-                "TP": "TP (总蛋白)",
-                "MHR": "MHR 比值",
+                "dNLR": "dNLR",
+                "CALLY": "CALLY",
+                "ESR": "ESR",
+                "MPV": "MPV",
+                "TP": "TP",
+                "MHR": "MHR",
             }
 
             shap_df = pd.DataFrame({
@@ -225,7 +205,7 @@ if st.button("🚀 开始风险评估", type="primary", use_container_width=True
             )
             ax.set_yticks(range(len(top)))
             ax.set_yticklabels(top["显示名"].values, fontsize=11)
-            ax.set_xlabel("SHAP 值（对预测结果的贡献）", fontsize=10)
+            ax.set_xlabel("SHAP value", fontsize=10)
             ax.axvline(0, color="grey", linewidth=0.8)
             ax.spines["top"].set_visible(False)
             ax.spines["right"].set_visible(False)
