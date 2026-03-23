@@ -1,0 +1,27 @@
+{
+  "feature_names": [
+    "dNLR",
+    "CALLY",
+    "ESR",
+    "MPV",
+    "TP",
+    "MHR"
+  ],
+  "n_features": 6,
+  "display_names": {
+    "dNLR": "dNLR",
+    "CALLY": "CALLY",
+    "ESR": "ESR",
+    "MPV": "MPV",
+    "TP": "TP",
+    "MHR": "MHR"
+  },
+  "descriptions": {
+    "dNLR": "Clinical feature: dNLR",
+    "CALLY": "Clinical feature: CALLY",
+    "ESR": "Clinical feature: ESR",
+    "MPV": "Clinical feature: MPV",
+    "TP": "Clinical feature: TP",
+    "MHR": "Clinical feature: MHR"
+  }
+}
