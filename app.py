@@ -9,9 +9,9 @@ import json
 # ==========================================
 st.set_page_config(page_title="LGBM 临床预测工具", page_icon="🏥", layout="wide")
 
-st.title("🏥 基于 LightGBM 的临床预测工具")
+st.title("🏥  PJI风险预测工具")
 st.markdown("""
-本工具基于 **LightGBM 梯度提升机器学习模型** 开发，用于临床风险预测。
+本工具基于LightGBM机器学习模型开发，用于临床风险预测。
 系统会自动根据您输入的原始血常规和生化指标，计算所需的复合炎症指数并评估风险。
 """)
 
